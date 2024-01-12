@@ -22,13 +22,12 @@ local vars = {
         awful.layout.suit.corner.nw,
     },
     taglist = {"1","2","3","4","5"},
-    
-
+    show_tags = 'noempty', --noempty, selected or all.
+    --taglist = tag_selector(),
 
     --TOPVAR
     top_var_position = "top", -- left, right, top or bottom
     top_var_height = 30,
-    
     --Rules
     titlebars_enabled = true,
 

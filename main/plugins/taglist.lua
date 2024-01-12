@@ -1,9 +1,18 @@
 local awful = require('awful')
+local VARS = require('user-variables')
 function create_taglist(s)
 -- Create a taglist widget
     local mytaglist = awful.widget.taglist {
         screen  = s,
-        filter  = awful.widget.taglist.filter.all,
+        filter  =  function(t) 
+            if (VARS.show_tags == 'noempty') then
+             return awful.widget.taglist.filter.noempty(t)
+             elseif (VARS.show_tags == 'selected') then
+             return awful.widget.taglist.filter.selected(t)
+            else
+             return awful.widget.taglist.filter.all(t)
+            end
+        end,
         buttons = {
             awful.button({ }, 1, function(t) t:view_only() end),
             awful.button({ VARS.modkey }, 1, function(t)
