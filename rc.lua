@@ -3,10 +3,12 @@
 
 --DEPENDENCIES:
 --PICOM
---PACTL
+--PACTL (pulse-audio)
+--ttf-arimo-nerd (font)
 
 local awful = require("awful")
-local naughty = require('naughty')
+--local naughty = require('naughty')
+--local gears = require('gears')
 
 pcall(require, "luarocks.loader")
 require("awful.autofocus")
@@ -15,16 +17,20 @@ require("awful.hotkeys_popup.keys")
 --USER VARIABLES
 VARS = require("user-variables")
 
+--[[
+--DEBUG
+    naughty.notify({
+    text = command,
+    timeout = 50,
+    position = "top_right"
+    }
+    )
+    ]]--
 
 awful.util.spawn("picom")
 
---DEBUG
-    naughty.notify({
-    text = VARS.show_tags,
-    timeout = 50,
-    position = "top_left"
-    }
-    )
+
+
 
 
 

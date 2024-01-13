@@ -21,7 +21,8 @@ local vars = {
         --awful.layout.suit.magnifier,
         awful.layout.suit.corner.nw,
     },
-    taglist = {"1","2","3","4","5"},
+
+    taglist = {"1","2","3","4","5","6","7"},
     show_tags = 'noempty', --noempty, selected or all.
     --taglist = tag_selector(),
 
@@ -33,7 +34,10 @@ local vars = {
 
 
     --THEMES VARIABLES
-    background_image = "~/Pictures/Wallpapers/fakewindowsxP.jpg"
+    background_image = "~/Pictures/Wallpapers/fakewindowsxP.jpg",
+    font = "Arimo 10",
+    windows_padding = 10,
+    screen_padding = 7,
 }
 
 return vars

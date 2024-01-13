@@ -36,9 +36,9 @@ awful.keyboard.append_global_keybindings({
 
 
 --VOLUME CONFIG
-    awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn('pactl set-sink-volume 54 +5%') end),
-    awful.key({}, "XF86AudioLowerVolume", function() awful.spawn('pactl set-sink-volume 54 -5%') end),
-    awful.key({}, "XF86AudioMute",        function() awful.spawn('pactl set-sink-mute 54 toggle') end),
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%') end),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%') end),
+    awful.key({}, "XF86AudioMute",        function() awful.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle') end),
 })
 
 -- Tags related keybindings
