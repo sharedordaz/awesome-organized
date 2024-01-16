@@ -9,6 +9,8 @@ local create_task_list = require('main.plugins.tasklist')
 local create_layoutbox = require('main.plugins.layoutbox')
 local create_taglist = require('main.plugins.taglist')
 
+local plugins = require('plugins')
+
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
     awful.tag(VARS.taglist, s, awful.layout.layouts[1])
@@ -33,6 +35,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
                 menu.mylauncher,
+                plugins.volumen,
                 s.mytaglist,
                 s.mypromptbox,
             },

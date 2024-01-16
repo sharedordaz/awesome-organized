@@ -5,6 +5,16 @@ local VARS = require('user-variables')
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/custom/theme.lua")
 
+beautiful.font = VARS.font
+beautiful.useless_gap = VARS.windows_padding
+
+screen.connect_signal("request::desktop_decoration", function(s)
+    -- Screen Padding
+    s.padding = { left = VARS.screen_padding_hor, right = VARS.screen_padding_hor, top = VARS.screen_padding_vert, bottom = VARS.screen_padding_vert }
+
+    -- ...
+end)
+
 -- This is used later as the default terminal and editor to run.
 terminal = VARS.terminal
 editor = os.getenv("EDITOR") or VARS.editor

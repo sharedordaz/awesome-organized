@@ -33,6 +33,18 @@ awful.keyboard.append_global_keybindings({
               {description = "run prompt", group = "launcher"}),
     awful.key({ VAR.modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+
+
+--SCREENSHOTS
+    awful.key({},'Print', function() awful.spawn('flameshot gui') end, {description = "Take a screenshot flameshot"} ),
+
+    awful.key({VAR.modkey}, 'e', function() awful.spawn(VARS.explorer) end, {description = "Open the explorer"} ),
+    
+
+--VOLUME CONFIG
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%') end),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%') end),
+    awful.key({}, "XF86AudioMute",        function() awful.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle') end),
 })
 
 -- Tags related keybindings

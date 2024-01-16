@@ -2,29 +2,12 @@
 
 
 --DEPENDENCIES:
-
-
-
-
--- awesome_mode: api-level=4:screen=on
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
-
--- Standard awesome library
---local gears = require("gears")
---local awful = require("awful")
--- Widget and layout library
---local wibox = require("wibox")
--- Theme handling library
---local beautiful = require("beautiful")
--- Notification library
---local naughty = require("naughty")
--- Declarative object management
---local ruled = require("ruled")
---local menubar = require("menubar")
---local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
+--PICOM
+--PACTL (pulse-audio)
+--ttf-arimo-nerd (font)
+local awful = require('awful')
+--local naughty = require('naughty')
+--local gears = require('gears')
 
 pcall(require, "luarocks.loader")
 require("awful.autofocus")
@@ -32,6 +15,20 @@ require("awful.hotkeys_popup.keys")
 
 --USER VARIABLES
 VARS = require("user-variables")
+
+--[[
+--DEBUG
+    naughty.notify({
+    text = command,
+    timeout = 50,
+    position = "top_right"
+    }
+    )
+    ]]--
+
+awful.util.spawn("picom")
+
+
 
 --MAIN: Main vanilla awesomewm modules
 require('main.error-handler')
@@ -53,17 +50,12 @@ require ('keys.window-mouse')
 
 
 --PLUGINS: External plugins
+--require('plugins.volume-bar')
 
 
---[[
---DEBUG
-naughty.notify({
-text = "true",
-timeout = 50,
-position = "top_left"
-}
-)
-]]--
+-- add key bindings
+
+
 
 
 
