@@ -5,6 +5,7 @@ local vars = {
     terminal = "kitty",
     editor = "nvim",
     modkey = "Mod4",
+    explorer = "nemo",
    
     layouts = {
         awful.layout.suit.floating,
@@ -37,7 +38,9 @@ local vars = {
     background_image = "~/Pictures/Wallpapers/fakewindowsxP.jpg",
     font = "Arimo 10",
     windows_padding = 10,
-    screen_padding = 7,
+    screen_padding_hor = 7,
+    screen_padding_vert = 3,
+
 }
 
 return vars

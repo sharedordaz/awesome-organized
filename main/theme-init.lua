@@ -10,7 +10,7 @@ beautiful.useless_gap = VARS.windows_padding
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Screen Padding
-    s.padding = { left = VARS.screen_padding, right = VARS.screen_padding, top = VARS.screen_padding, bottom = VARS.screen_padding }
+    s.padding = { left = VARS.screen_padding_hor, right = VARS.screen_padding_hor, top = VARS.screen_padding_vert, bottom = VARS.screen_padding_vert }
 
     -- ...
 end)

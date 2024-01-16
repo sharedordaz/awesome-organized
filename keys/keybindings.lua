@@ -35,6 +35,12 @@ awful.keyboard.append_global_keybindings({
               {description = "show the menubar", group = "launcher"}),
 
 
+--SCREENSHOTS
+    awful.key({},'Print', function() awful.spawn('flameshot gui') end, {description = "Take a screenshot flameshot"} ),
+
+    awful.key({VAR.modkey}, 'e', function() awful.spawn(VARS.explorer) end, {description = "Open the explorer"} ),
+    
+
 --VOLUME CONFIG
     awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%') end),
     awful.key({}, "XF86AudioLowerVolume", function() awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%') end),

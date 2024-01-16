@@ -5,8 +5,7 @@
 --PICOM
 --PACTL (pulse-audio)
 --ttf-arimo-nerd (font)
-
-local awful = require("awful")
+local awful = require('awful')
 --local naughty = require('naughty')
 --local gears = require('gears')
 
@@ -31,10 +30,6 @@ awful.util.spawn("picom")
 
 
 
-
-
-
-
 --MAIN: Main vanilla awesomewm modules
 require('main.error-handler')
 require ('main.theme-init')
@@ -55,13 +50,10 @@ require ('keys.window-mouse')
 
 
 --PLUGINS: External plugins
-
--- add the widget to your wibox
+--require('plugins.volume-bar')
 
 
 -- add key bindings
-
-
 
 
 
