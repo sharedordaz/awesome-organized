@@ -3,7 +3,7 @@
 
 --DEPENDENCIES:
 --PICOM
---PACTL (pulse-audio)
+--PACTL (pulseaudio or pipewire-pulse)
 --ttf-arimo-nerd (font)
 --Flameshot (Print Screen)
 local awful = require('awful')
