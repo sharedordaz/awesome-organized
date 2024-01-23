@@ -5,6 +5,7 @@
 --PICOM
 --PACTL (pulse-audio)
 --ttf-arimo-nerd (font)
+--Flameshot (Print Screen)
 local awful = require('awful')
 --local naughty = require('naughty')
 --local gears = require('gears')
@@ -28,6 +29,7 @@ VARS = require("user-variables")
 
 awful.util.spawn("picom")
 
+local volume_widget = require('awesome-wm-widgets.pactl-widget.volume')
 
 
 --MAIN: Main vanilla awesomewm modules
@@ -50,8 +52,6 @@ require ('keys.window-mouse')
 
 
 --PLUGINS: External plugins
---require('plugins.volume-bar')
-
 
 -- add key bindings
 

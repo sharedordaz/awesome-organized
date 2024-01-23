@@ -11,6 +11,9 @@ local create_taglist = require('main.plugins.taglist')
 
 local plugins = require('plugins')
 
+local volume_widget = require('awesome-wm-widgets.pactl-widget.volume')
+
+
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
     awful.tag(VARS.taglist, s, awful.layout.layouts[1])
@@ -36,6 +39,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 layout = wibox.layout.fixed.horizontal,
                 menu.mylauncher,
                 plugins.volumen,
+                --volume_widget(),
                 s.mytaglist,
                 s.mypromptbox,
             },

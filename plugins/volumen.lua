@@ -28,8 +28,21 @@ volumetool.widget = wibox.widget.textbox()
 --Arguments: Command, refresh interval, callback function. On the arguments, stdout is the output of the command.
 --At the end there is the base widget
 awful.widget.watch("pamixer --get-volume", 1, function(widget, stdout, stderr)
-    volumetool.level = stdout
-    widget:set_text("Volumen: " .. stdout)
+    volumetool.level = tonumber(stdout)
+    local icon = ''
+    if volumetool.level == 0 then
+        icon = ""
+    elseif volumetool.level <= 33 then
+        icon = ""
+    elseif volumetool.level <= 66 then
+        icon = "󰕾"
+    else
+        icon = ""
+    end
+    
+    widget:set_text(icon .. "  " .. volumetool.level)
+
+
 end, volumetool.widget)
 
 volumetool.widget:connect_signal('button::press',function(_, _, _, button)
