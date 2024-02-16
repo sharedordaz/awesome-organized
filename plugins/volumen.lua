@@ -1,7 +1,6 @@
 local awful = require('awful')
 local wibox = require('wibox')
 local gears = require('gears')
-local naughty = require('naughty')
 
 
 
@@ -34,7 +33,6 @@ volumetool.notification_popup = awful.popup({
             font = 'Arimo 20',
             type = "dock"
         },
-       
         layout = wibox.layout.fixed.vertical,
     },
     bg = "#282c34",
@@ -64,7 +62,6 @@ awful.widget.watch("pamixer --get-volume", 0.1, function(widget, stdout)
     if new_level == 0 then
         icon = ""
         bars = " "
-    
     elseif new_level <= 33 then
         icon = ""
     elseif new_level <= 66 then

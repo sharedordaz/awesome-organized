@@ -6,6 +6,9 @@
 --PACTL (pulseaudio or pipewire-pulse)
 --ttf-arimo-nerd (font)
 --Flameshot (Print Screen)
+--network-manager-applet
+
+
 local awful = require('awful')
 --local naughty = require('naughty')
 --local gears = require('gears')
@@ -27,7 +30,9 @@ VARS = require("user-variables")
     )
     ]]--
 
+--EXTERNAL SOFTWARE
 awful.util.spawn("picom")
+awful.util.spawn("nm-applet")
 
 local volume_widget = require('awesome-wm-widgets.pactl-widget.volume')
 
